@@ -20,7 +20,7 @@ body {
     padding: 20px 5px;
 }
 
-.calc-button{
+.calc-button {
     background-color: #d8d9db;
     color: black;
     height: 100px;
@@ -29,4 +29,13 @@ body {
     border-radius: 0;
     font-size: 40px;
     cursor:pointer;
+}
+
+/*why isn't this working? */
+.calc-button:hover {
+    background-color: #ebebeb;
+}
+
+.calc-button:active {
+    background-color: #bbbcbe;
 }
