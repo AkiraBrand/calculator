@@ -40,10 +40,37 @@ body {
     background-color: #bbbcbe;
 }
 
+/*you can do this instead of selecting the individual buttons! its last-child because its the last child 
+element in the html calc button divs (aka the last one that got written)*/
+
+.calc-button:last-child {
+    background-color: #df974c;
+    color: white;
+}
+
+.calc-button:last-child:hover {
+    background-color: #dfb07e;
+    color: white;
+}
+
+.calc-button:last-child:active {
+    background-color: #dd8d37
+}
+
 .double {
     width:49.7%;
 }
 
 .triple {
     width: 74.8%;
+}
+
+.calc-row {
+    /*make it a flexbox*/
+    display: flex;
+    /*all content is stretched to fill everything*/
+    align-content: stretch;
+    /*w/o this the lines dont show up between the numbers and buttons*/
+    justify-content: space-between;
+    margin-bottom: .5%;
 }
