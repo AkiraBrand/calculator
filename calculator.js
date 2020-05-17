@@ -7,11 +7,13 @@ let buffer = "0";
 let previousOperator; 
 
 function buttonClick(value){
+    //if the value is not a number, handle it as a symbol
 if (isNaN(parseInt(value))) {
-
+    handleSymbol(value);
 
   } else {
-
+      //if it is a number (line 11 === true) handle it as a number 
+    handleNumber(value);
   }
 
 }
