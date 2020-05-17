@@ -8,18 +8,16 @@ let previousOperator;
 const screen = document.querySelector('.screen');
 
 function buttonClick(value){
-    //if the value is not a number, handle it as a symbol w/ handleSymbol funct
-if (isNaN(parseInt(value))) {
-    handleSymbol(value);
+    if (isNaN(parseInt(value))) {
+        handleSymbol(value);
 
-  } else {
-      //if it is a number (line 11 === true) handle it as a number w/ handleNumber funct
-    handleNumber(value);
-  }
+     } else {
+        handleNumber(value);
+    }
 
 }
 
-fucntion handleSymbol(value){
+function handleSymbol(value){
 
 }
 
@@ -40,5 +38,6 @@ function rerender(){
 
 //listen to the calc buttons and on <click> 
 document.querySelector('.calc-buttons').addEventListener("click", function(event){
+    console.log("here");
     buttonClick(event.target.value);
 })
