@@ -10,7 +10,7 @@ const screen = document.querySelector('.screen');
 function buttonClick(value){
     if (isNaN(parseInt(value))) {
         handleSymbol(value);
-
+   
      } else {
         handleNumber(value);
     }
@@ -18,10 +18,25 @@ function buttonClick(value){
 }
 
 function handleSymbol(value){
-
+    switch (value) {
+        case "C":
+          buffer = "0"; 
+          runningTotal = "0";
+        break;
+        case "=":
+          if (previousOperator === null){
+            return;
+          }   
+          flushOperation(parseInt(buffer));
+          previousOperator = null;
+          buffer = runningTotal;
+          runningTotal = 0;
+          break;
+    }
 }
 
 function handleNumber(value){
+    //console.log("here");
     if (buffer === "0") {
         buffer = value;
     } else {
@@ -34,10 +49,8 @@ function handleNumber(value){
 function rerender(){
     screen.innerText = buffer;
 }
-  
 
 //listen to the calc buttons and on <click> 
 document.querySelector('.calc-buttons').addEventListener("click", function(event){
-    console.log("here");
-    buttonClick(event.target.value);
+    buttonClick(event.target.innerText);
 })
